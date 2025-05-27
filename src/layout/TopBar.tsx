@@ -1,15 +1,14 @@
 import useUI from "@/hooks/useUI";
 import { AppBar, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import { useRouter } from "next/router";
-import { FC } from "react";
+import type { FC } from "react";
 import { GiNightSleep } from "react-icons/gi";
 import { HiMenuAlt1 } from "react-icons/hi";
-import { RiMenuFoldFill, RiMenuUnfoldFill } from "react-icons/ri";
 import { WiDaySunny } from "react-icons/wi";
 import navItems from "./nav-items";
 
 const TopBar: FC = () => {
-  const { changeTheme, theme, sidebarToggle, isSidebarExpand, mobileMenuToggle } = useUI();
+  const { changeTheme, theme, sidebarToggle, mobileMenuToggle } = useUI();
 
   const router = useRouter().pathname;
 
@@ -19,20 +18,8 @@ const TopBar: FC = () => {
     <AppBar position="sticky">
       <Stack direction="row">
         <Toolbar
-          className={`flex pr-0 pl-3 sm:pr-1 justify-end transition-all duration-300 ease-linear ${
-            isSidebarExpand ? "w-[200px] bg-secondary" : "w-max sm:w-[68px]"
-          }`}
+          className={`flex pr-0 pl-3 sm:pr-1 justify-end transition-all duration-300 ease-linear`}
         >
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            onClick={sidebarToggle}
-            className="hidden lg:block"
-          >
-            {isSidebarExpand ? <RiMenuFoldFill /> : <RiMenuUnfoldFill />}
-          </IconButton>
           <IconButton
             size="large"
             edge="start"

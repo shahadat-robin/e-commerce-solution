@@ -1,8 +1,8 @@
 import AppContext from "@/context";
-import AppLayout from "@/layout";
 import "@/styles/globals.css";
 import { CssBaseline } from "@mui/material";
 import type { AppProps } from "next/app";
+import AppLayout from "../layout";
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
