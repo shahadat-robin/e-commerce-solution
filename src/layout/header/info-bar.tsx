@@ -1,5 +1,3 @@
-import { Container } from "@mui/material";
-
 export default function InfoBar() {
-  return <Container>This is info bar</Container>;
+  return <div className="container">This is info bar</div>;
 }

@@ -1,9 +1,7 @@
-import { Container } from "@mui/material";
-
 export default function NavBar() {
   return (
     <nav>
-      <Container>This is nav bar</Container>
+      <div className="container">This is nav bar</div>
     </nav>
   );
 }

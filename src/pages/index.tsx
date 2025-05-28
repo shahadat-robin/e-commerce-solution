@@ -1,8 +1,5 @@
-import SalesChart from "@/containers/dashboard/SalesChart";
-import { Container, Grid, Paper, Typography } from "@mui/material";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 
 const HomePage: NextPage = () => {
   return (
@@ -11,7 +8,12 @@ const HomePage: NextPage = () => {
         <title>Dashboard</title>
       </Head>
 
-      <Container>
+      <div className="border">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestias animi eaque
+        incidunt accusamus esse tempore rem natus! Nostrum iste odit a cupiditate cumque dignissimos
+        error incidunt accusamus quia assumenda!
+      </div>
+      {/* <Container>
         <Grid container className="grid grid-cols-12 gap-5 ">
           <Grid item className="col-span-full md:col-span-9">
             <Paper className="p-3 lg:p-5 w-full">
@@ -34,7 +36,7 @@ const HomePage: NextPage = () => {
             </Paper>
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
     </>
   );
 };

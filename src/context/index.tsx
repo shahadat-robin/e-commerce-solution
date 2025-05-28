@@ -1,7 +1,5 @@
 import useWindowDimensions from "@/hooks/useWindowSize";
-import themes from "@/utils/theme";
-import { ThemeProvider } from "@emotion/react";
-import { FC, ReactNode, createContext, useEffect, useState } from "react";
+import { type FC, type ReactNode, createContext, useEffect, useState } from "react";
 
 export const UIContext = createContext({});
 
@@ -35,7 +33,7 @@ const AppContext: FC<Props> = ({ children }) => {
         mobileMenuToggle,
       }}
     >
-      <ThemeProvider theme={themes[theme]}>{children}</ThemeProvider>
+      {children}
     </UIContext.Provider>
   );
 };
