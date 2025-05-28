@@ -6,7 +6,7 @@ export default function Header() {
     <>
       <InfoBar />
       <header className="sticky top-0">
-        <div className="container">
+        <div className="container py-5">
           <div>
             Ad tempora ullam ipsam quae dolorem laborum voluptatibus temporibus, at asperiores
             facilis quam molestias perspiciatis adipisci aperiam quasi praesentium corrupti

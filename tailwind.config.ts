@@ -1,5 +1,3 @@
-import { colors as defaultColors } from "tailwindcss/defaultTheme";
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   important: true,
@@ -9,11 +7,22 @@ module.exports = {
     "./src/layout/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+    },
     extend: {
       colors: {
-        primary: "#fde74c",
-        secondary: "#5b7c99",
-        ...defaultColors,
+        brand: {
+          DEFAULT: "#ff5050",
+        },
+        white: {
+          DEFAULT: "#ffffff",
+          secondary: "#f8f8f8",
+        },
+        dark: {
+          DEFAULT: "#2d3439",
+        },
       },
     },
   },
