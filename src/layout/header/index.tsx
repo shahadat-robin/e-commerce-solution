@@ -1,7 +1,7 @@
 import Image from "next/image";
 // import brandLogo from "../../../public/brand-logo.svg";
 import { Dropdown, Input, MenuProps } from "antd";
-import { BiCart, BiUser } from "react-icons/bi";
+import { FiShoppingCart, FiUser } from "react-icons/fi";
 import InfoBar from "./info-bar";
 import NavBar from "./nav-bar";
 
@@ -33,11 +33,11 @@ export default function Header() {
             placement="bottomRight"
             rootClassName="w-max"
             className="bg-brand"
-            icon={<BiUser className="text-xl" />}
+            icon={<FiUser className="text-xl" />}
             arrow
             onClick={() => console.log("will expose the cart")}
           >
-            <BiCart className="text-xl" /> 0 items
+            <FiShoppingCart className="text-xl" /> 0 items
           </Dropdown.Button>
         </div>
 

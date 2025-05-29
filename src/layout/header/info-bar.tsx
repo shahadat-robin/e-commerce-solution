@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BiSolidPhoneCall } from "react-icons/bi";
-import { MdEmail } from "react-icons/md";
+import { BiPhoneCall } from "react-icons/bi";
+import { MdOutlineMail } from "react-icons/md";
 
 export default function InfoBar() {
   return (
@@ -8,7 +8,7 @@ export default function InfoBar() {
       <div className="container py-1.5 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="flex items-center gap-1">
-            <BiSolidPhoneCall /> Call us:
+            <BiPhoneCall /> Call us:
           </span>
           <Link href="tel:+8801772493214" className="hover-underline">
             +8801772493214
@@ -20,7 +20,7 @@ export default function InfoBar() {
         </div>
 
         <div className="flex items-center gap-1">
-          <MdEmail />
+          <MdOutlineMail />
           <Link
             href="mailto:connection.robin@gmail.com"
             className="hover-underline"
