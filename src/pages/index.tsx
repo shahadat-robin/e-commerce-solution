@@ -8,22 +8,22 @@ const HomePage: NextPage = () => {
         <title>Dashboard</title>
       </Head>
 
-      <div className="border container py-20">
+      <div className="container py-20">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestias animi eaque
         incidunt accusamus esse tempore rem natus! Nostrum iste odit a cupiditate cumque dignissimos
         error incidunt accusamus quia assumenda!
       </div>
-      <div className="border container py-20">
+      <div className="container py-20">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestias animi eaque
         incidunt accusamus esse tempore rem natus! Nostrum iste odit a cupiditate cumque dignissimos
         error incidunt accusamus quia assumenda!
       </div>
-      <div className="border container py-20">
+      <div className="container py-20">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestias animi eaque
         incidunt accusamus esse tempore rem natus! Nostrum iste odit a cupiditate cumque dignissimos
         error incidunt accusamus quia assumenda!
       </div>
-      <div className="border container py-20">
+      <div className="container py-20">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus molestias animi eaque
         incidunt accusamus esse tempore rem natus! Nostrum iste odit a cupiditate cumque dignissimos
         error incidunt accusamus quia assumenda!

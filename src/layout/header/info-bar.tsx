@@ -10,16 +10,24 @@ export default function InfoBar() {
           <span className="flex items-center gap-1">
             <BiSolidPhoneCall /> Call us:
           </span>
-          <Link href="tel:+8801772493214">+8801772493214</Link>
+          <Link href="tel:+8801772493214" className="hover-underline">
+            +8801772493214
+          </Link>
           <span>⬩</span>
-          <Link href="tel:+8801772493214">+8801772493214</Link>
+          <Link href="tel:+8801772493214" className="hover-underline">
+            +8801772493214
+          </Link>
         </div>
 
         <div className="flex items-center gap-1">
           <MdEmail />
-          <a href="mailto:connection.robin@gmail.com" target="_blank">
+          <Link
+            href="mailto:connection.robin@gmail.com"
+            className="hover-underline"
+            target="_blank"
+          >
             connection.robin@gmail.com
-          </a>
+          </Link>
         </div>
       </div>
     </div>
