@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <>
       <InfoBar />
-      <header className="sticky top-0 bg-white">
+      <header className="sticky top-0 bg-white z-50">
         <div className="container py-4 flex items-center justify-between">
           <Image src={"/brand-logo.svg"} alt="" width={200} height={100} />
 
