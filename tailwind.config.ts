@@ -25,6 +25,7 @@ module.exports = {
         },
         gray: {
           DEFAULT: "#999999",
+          secondary: "#cccccc",
         },
       },
     },
