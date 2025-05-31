@@ -2,12 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
 @layer components {
   .hover-underline {
-    @apply text-gray transition-all duration-500 hover:text-brand relative 
+    @apply text-gray transition-all duration-500 relative
+    /* hover effects */
+    hover:text-brand
     /* initialize underline */
     after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:bg-brand after:w-0 after:transition-all after:duration-500
     /* get full width underline */
     hover:after:w-full;
   }
+
+  .hover-ellipse {
+    @apply text-gray transition-all duration-500 relative
+    /* initialize ellipse */
+    before:absolute before:left-0 before:top-1/2 before:h-1.5 before:w-1.5 before:bg-brand before:transform before:-translate-y-1/2 before:rounded-full before:opacity-0 before:transition-opacity before:duration-500
+    /* hover effects; */
+    hover:text-brand hover:pl-3 hover:before:opacity-100;
+  }
+}
+
+.ant-btn-icon {
+  line-height: 0;
 }

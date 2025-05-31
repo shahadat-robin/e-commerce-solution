@@ -56,7 +56,7 @@ export default function NavBar() {
         <Dropdown
           menu={{ items }}
           trigger={["click"]}
-          className="bg-brand cursor-pointer py-3 px-5 group"
+          className="bg-brand cursor-pointer py-3 px-10 group"
         >
           <Space className="uppercase tracking-widest">
             Categories
