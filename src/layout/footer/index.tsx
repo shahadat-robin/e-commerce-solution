@@ -72,7 +72,7 @@ export default function Footer() {
       </div>
 
       <div className="py-5 bg-brand text-center">
-        Powered By{" "}
+        Developed By{" "}
         <Link href="https://shahadat-robin.vercel.app" target="_blank" className="font-semibold">
           Shahadat Robin
         </Link>{" "}
