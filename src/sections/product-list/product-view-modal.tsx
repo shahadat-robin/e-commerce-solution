@@ -1,11 +1,16 @@
-import { Carousel, Modal, Tooltip, Typography } from "antd";
+import { Button, Carousel, Modal, Rate, Tooltip, Typography } from "antd";
 import Image from "next/image";
 import { useState } from "react";
+import { BiCart } from "react-icons/bi";
 import { BsEye } from "react-icons/bs";
-import { IProduct } from "./interface";
+import { FaPlus } from "react-icons/fa";
+import { TiMinus } from "react-icons/ti";
+import { twMerge } from "tailwind-merge";
+import type { IProduct } from "./interface";
 
-export default function ProductViewModal({ image, title, price }: IProduct) {
+export default function ProductViewModal({ image, title, price, rating }: IProduct) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <>
@@ -61,15 +66,49 @@ export default function ProductViewModal({ image, title, price }: IProduct) {
           />
         </Carousel>
 
-        <div className="divide-y space-y-1">
-          <Typography.Title level={3}>{title}</Typography.Title>
-          <div className="py-2">
+        <div className="space-y-5">
+          <div>
+            <Typography.Title level={3}>{title}</Typography.Title>
+            <Rate disabled value={rating} allowHalf className="text-sm" />
+          </div>
+
+          <div>
             <p>SKU: SS-2365273</p>
             <p>Availability: In Stock</p>
           </div>
-          <div className="py-2">
-            <p className="text-3xl">${price}.00</p>
+
+          <div className="flex items-end gap-3">
+            <p className="text-3xl font-semibold">${price}.00</p>
+            <p className="text-lg line-through">${price + 70}.00</p>
           </div>
+
+          <div className="border inline-flex items-center gap-2">
+            <span
+              className={twMerge(
+                "p-2 bg-white-secondary cursor-pointer",
+                quantity <= 1 && "cursor-not-allowed"
+              )}
+              onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+            >
+              <TiMinus />
+            </span>
+            <span className="text-lg min-w-[2rem] text-center select-none">{quantity}</span>
+            <span
+              className="p-2 bg-white-secondary cursor-pointer"
+              onClick={() => setQuantity(quantity + 1)}
+            >
+              <FaPlus />
+            </span>
+          </div>
+
+          <div className="inline-flex items-stretch gap-3">
+            <Button icon={<BiCart className="text-xl" />} type="primary" className="">
+              Add to cart
+            </Button>
+            <Button>Add to wishlist</Button>
+          </div>
+
+          <p>* Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
         </div>
       </Modal>
     </>

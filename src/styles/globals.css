@@ -33,3 +33,7 @@
 .ant-btn-icon {
   line-height: 0;
 }
+
+.ant-btn-primary {
+  @apply bg-brand;
+}
