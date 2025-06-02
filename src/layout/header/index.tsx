@@ -32,7 +32,6 @@ export default function Header() {
             type="primary"
             placement="bottomRight"
             rootClassName="w-max"
-            className="bg-brand"
             icon={<FiUser className="text-xl" />}
             arrow
             onClick={() => console.log("will expose the cart")}

@@ -1,16 +1,16 @@
 import { Rate, Tooltip, Typography } from "antd";
 import Image from "next/image";
 import { BiCart } from "react-icons/bi";
-import { BsEye } from "react-icons/bs";
 import { IoMdHeartEmpty } from "react-icons/io";
 import type { IProduct } from "./interface";
+import ProductViewModal from "./product-view-modal";
 
-export default function ProductCard({ image, title, price, rating }: IProduct) {
+export default function ProductCard(product: IProduct) {
   return (
     <div className="border-[0.5px] group">
       <div className="overflow-hidden relative">
         <Image
-          src={image}
+          src={product.image}
           alt=""
           height={200}
           width={200}
@@ -24,11 +24,7 @@ export default function ProductCard({ image, title, price, rating }: IProduct) {
             </span>
           </Tooltip>
 
-          <Tooltip title={"View details"}>
-            <span className="p-1.5 cursor-pointer hover:bg-brand hover:text-white transition duration-300 bg-white-secondary border rounded-full">
-              <BsEye />
-            </span>
-          </Tooltip>
+          <ProductViewModal {...product} />
 
           <Tooltip title={"Add to cart"}>
             <span className="p-1.5 cursor-pointer hover:bg-brand hover:text-white transition duration-300 bg-white-secondary border rounded-full">
@@ -40,10 +36,10 @@ export default function ProductCard({ image, title, price, rating }: IProduct) {
 
       <div className="p-3 text-center">
         <Typography.Title level={5} className="line-clamp-2">
-          {title}
+          {product.title}
         </Typography.Title>
-        <Rate disabled defaultValue={rating} allowHalf className="text-sm" />
-        <p>${price}.00</p>
+        <Rate disabled defaultValue={product.rating} allowHalf className="text-sm" />
+        <p>${product.price}.00</p>
       </div>
     </div>
   );
