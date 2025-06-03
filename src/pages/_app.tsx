@@ -5,12 +5,12 @@ import type { AppProps } from "next/app";
 import AppLayout from "../layout";
 
 export default function App(props: AppProps) {
-  const { Component, pageProps } = props;
+  const { Component: Page, pageProps } = props;
 
   return (
     <ConfigProvider theme={theme}>
       <AppLayout>
-        <Component {...pageProps} />
+        <Page {...pageProps} />
       </AppLayout>
     </ConfigProvider>
   );

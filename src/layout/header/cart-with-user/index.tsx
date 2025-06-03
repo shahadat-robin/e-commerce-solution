@@ -1,4 +1,5 @@
 import { Button, Drawer, Dropdown, MenuProps } from "antd";
+import Link from "next/link";
 import { useState } from "react";
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import CartProduct from "./cart-product";
@@ -43,17 +44,17 @@ export default function CartWithUser() {
             ))}
           </div>
 
-          <div className="text-xl font-semibold flex items-center py-3 justify-between">
+          <div className="text-lg font-semibold flex items-center py-3 justify-between">
             <p>Total:</p>
             <p>$1000.00</p>
           </div>
         </div>
 
-        <div>
-          <Button type="primary" size="large" className="w-full">
-            Place order
+        <Link href="/checkout">
+          <Button type="primary" size="large" className="w-full" onClick={() => setOpenCart(false)}>
+            Checkout
           </Button>
-        </div>
+        </Link>
       </Drawer>
     </>
   );
