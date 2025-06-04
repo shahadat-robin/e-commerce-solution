@@ -1,13 +1,12 @@
 export const mediaBanners = [
-  "https://inspiretemplates.com/E-shope/image/cache/catalog/right-banner/267X240-001-267x240.png",
-  "https://inspiretemplates.com/E-shope/image/cache/catalog/right-banner/267X240-002-267x240.png",
-  "https://inspiretemplates.com/E-shope/image/cache/catalog/right-banner/267X240-001-267x240.png",
-  "https://inspiretemplates.com/E-shope/image/cache/catalog/right-banner/267X240-002-267x240.png",
+  "/images/hero-banner/hero-banner-1.jpg",
+  "/images/hero-banner/hero-banner-2.jpg",
+  "/images/hero-banner/hero-banner-3.jpg",
+  "/images/hero-banner/hero-banner-4.jpg",
 ];
 
 export const carouselBanners = [
-  "https://inspiretemplates.com/E-shope/image/cache/catalog/right-banner/267X240-001-267x240.png",
-  "https://inspiretemplates.com/E-shope/image/cache/catalog/right-banner/267X240-002-267x240.png",
-  "https://inspiretemplates.com/E-shope/image/cache/catalog/right-banner/267X240-001-267x240.png",
-  "https://inspiretemplates.com/E-shope/image/cache/catalog/right-banner/267X240-002-267x240.png",
+  "/images/hero-banner/hero-slider-1.jpg",
+  "/images/hero-banner/hero-slider-2.jpg",
+  "/images/hero-banner/hero-slider-3.png",
 ];

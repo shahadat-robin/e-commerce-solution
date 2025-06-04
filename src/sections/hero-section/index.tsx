@@ -9,7 +9,13 @@ export default function HeroSection() {
       <div className="container grid grid-cols-4 gap-5">
         {mediaBanners.map((banner, index) => (
           <div key={index} className={twMerge("", index === 1 && "row-start-2 col-start-1")}>
-            <Image src={banner} alt="" height={300} width={300} className="w-full h-auto" />
+            <Image
+              src={banner}
+              alt={`Hero banner ${index}`}
+              height={300}
+              width={300}
+              className="w-full h-auto aspect-square"
+            />
           </div>
         ))}
 
@@ -27,10 +33,10 @@ export default function HeroSection() {
               <Image
                 key={index}
                 src={banner}
-                alt=""
+                alt={`Hero slider banner ${index}`}
                 height={500}
                 width={500}
-                className="w-full h-auto"
+                className="w-full h-auto aspect-square"
               />
             ))}
           </Carousel>
