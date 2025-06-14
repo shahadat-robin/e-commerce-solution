@@ -8,7 +8,13 @@ import { TiMinus } from "react-icons/ti";
 import { twMerge } from "tailwind-merge";
 import type { IProduct } from "./interface";
 
-export default function ProductViewModal({ image, title, price, rating }: IProduct) {
+export default function ProductViewModal({
+  images,
+  title,
+  price,
+  discountPercentage,
+  rating,
+}: IProduct) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
@@ -43,27 +49,16 @@ export default function ProductViewModal({ image, title, price, rating }: IProdu
           adaptiveHeight
           draggable
         >
-          <Image
-            src={"https://inspiretemplates.com/E-shope/image/cache/catalog/product/28-212x212.jpg"}
-            alt=""
-            height={500}
-            width={500}
-            className="w-full h-auto"
-          />
-          <Image
-            src={"https://inspiretemplates.com/E-shope/image/cache/catalog/product/28-212x212.jpg"}
-            alt=""
-            height={500}
-            width={500}
-            className="w-full h-auto"
-          />
-          <Image
-            src={"https://inspiretemplates.com/E-shope/image/cache/catalog/product/28-212x212.jpg"}
-            alt=""
-            height={500}
-            width={500}
-            className="w-full h-auto"
-          />
+          {images.map((image, index) => (
+            <Image
+              src={image}
+              alt=""
+              key={index}
+              height={500}
+              width={500}
+              className="w-full h-auto"
+            />
+          ))}
         </Carousel>
 
         <div className="space-y-5">
@@ -78,8 +73,10 @@ export default function ProductViewModal({ image, title, price, rating }: IProdu
           </div>
 
           <div className="flex items-end gap-3">
-            <p className="text-3xl font-semibold">${price}.00</p>
-            <p className="text-lg line-through">${price + 70}.00</p>
+            <p className="text-3xl font-semibold">
+              ${(price - (price * discountPercentage) / 100).toFixed(2)}
+            </p>
+            <p className="text-lg line-through">${price}</p>
           </div>
 
           <div className="border inline-flex items-center gap-2">

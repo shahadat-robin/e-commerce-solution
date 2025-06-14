@@ -7,11 +7,11 @@ import ProductViewModal from "./product-view-modal";
 
 export default function ProductCard(product: IProduct) {
   return (
-    <div className="border-[0.5px] group">
+    <div className="border-[0.5px] group flex-col flex">
       <div className="overflow-hidden relative">
         <Image
-          src={product.image}
-          alt=""
+          src={product.thumbnail}
+          alt={product.title}
           height={200}
           width={200}
           className="w-full h-auto group-hover:scale-110 transition-all"
@@ -34,12 +34,14 @@ export default function ProductCard(product: IProduct) {
         </div>
       </div>
 
-      <div className="p-3 text-center">
+      <div className="p-3 flex-1 flex flex-col items-center justify-between text-center">
         <Typography.Title level={5} className="line-clamp-2">
           {product.title}
         </Typography.Title>
-        <Rate disabled defaultValue={product.rating} allowHalf className="text-sm" />
-        <p>${product.price}.00</p>
+        <div>
+          <Rate disabled defaultValue={product.rating} allowHalf className="text-sm" />
+          <p>${(product.price - (product.price * product.discountPercentage) / 100).toFixed(2)}</p>
+        </div>
       </div>
     </div>
   );
