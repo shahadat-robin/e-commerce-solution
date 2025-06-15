@@ -1,3 +1,5 @@
+import { useAppDispatch } from "@/store/hooks";
+import { addToCart } from "@/store/slices/cart.slice";
 import { Rate, Tooltip, Typography } from "antd";
 import Image from "next/image";
 import { BiCart } from "react-icons/bi";
@@ -6,6 +8,11 @@ import type { IProduct } from "./interface";
 import ProductViewModal from "./product-view-modal";
 
 export default function ProductCard(product: IProduct) {
+  const dispatch = useAppDispatch();
+
+  const handleAddToCart = (quantity: number) =>
+    dispatch(addToCart({ productId: product.id, quantity }));
+
   return (
     <div className="border-[0.5px] group flex-col flex">
       <div className="overflow-hidden relative">
@@ -24,10 +31,13 @@ export default function ProductCard(product: IProduct) {
             </span>
           </Tooltip>
 
-          <ProductViewModal {...product} />
+          <ProductViewModal product={product} handleAddToCart={handleAddToCart} />
 
           <Tooltip title={"Add to cart"}>
-            <span className="p-1.5 cursor-pointer hover:bg-brand hover:text-white transition duration-300 bg-white-secondary border rounded-full">
+            <span
+              className="p-1.5 cursor-pointer hover:bg-brand hover:text-white transition duration-300 bg-white-secondary border rounded-full"
+              onClick={() => handleAddToCart(1)}
+            >
               <BiCart />
             </span>
           </Tooltip>
