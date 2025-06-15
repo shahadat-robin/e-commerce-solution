@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { quantityAdjust, removeFromCart } from "@/store/slices/cart.slice";
 import { Button, Carousel, message, Modal, Rate, Tooltip, Typography } from "antd";
 import Image from "next/image";
-import { Dispatch, useState } from "react";
+import { type Dispatch, useState } from "react";
 import { BiCart } from "react-icons/bi";
 import { BsEye } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";

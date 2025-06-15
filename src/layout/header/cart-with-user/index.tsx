@@ -1,4 +1,5 @@
-import { Button, Drawer, Dropdown, MenuProps } from "antd";
+import { useAppSelector } from "@/store/hooks";
+import { Button, Drawer, Dropdown, Empty, MenuProps } from "antd";
 import { useState } from "react";
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import CartProduct from "./cart-product";
@@ -11,6 +12,7 @@ const items: MenuProps["items"] = [
 
 export default function CartWithUser() {
   const [openCart, setOpenCart] = useState(false);
+  const cart = useAppSelector((state) => state.cart);
 
   return (
     <>
@@ -24,7 +26,7 @@ export default function CartWithUser() {
         arrow
         onClick={() => setOpenCart(true)}
       >
-        <FiShoppingCart className="text-xl" /> 0 items
+        <FiShoppingCart className="text-xl" /> {cart.length} items
       </Dropdown.Button>
 
       <Drawer
@@ -36,24 +38,30 @@ export default function CartWithUser() {
           body: "flex flex-col justify-between gap-5",
         }}
       >
-        <div className="divide-y ">
-          <div className="flex flex-col divide-y">
-            {new Array(5).fill("").map((item, index) => (
-              <CartProduct key={index} />
-            ))}
-          </div>
+        {!cart.length ? (
+          <Empty description="Empty cart" />
+        ) : (
+          <>
+            <div className="divide-y">
+              <div className="flex flex-col divide-y">
+                {cart.map((item, index) => (
+                  <CartProduct key={index} productId={item.productId} />
+                ))}
+              </div>
 
-          <div className="text-xl font-semibold flex items-center py-3 justify-between">
-            <p>Total:</p>
-            <p>$1000.00</p>
-          </div>
-        </div>
+              <div className="text-xl font-semibold flex items-center py-3 justify-between">
+                <p>Total:</p>
+                <p>$1000.00</p>
+              </div>
+            </div>
 
-        <div>
-          <Button type="primary" size="large" className="w-full">
-            Place order
-          </Button>
-        </div>
+            <div>
+              <Button type="primary" size="large" className="w-full">
+                Place order
+              </Button>
+            </div>
+          </>
+        )}
       </Drawer>
     </>
   );
