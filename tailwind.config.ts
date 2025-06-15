@@ -27,6 +27,10 @@ module.exports = {
           DEFAULT: "#999999",
           secondary: "#cccccc",
         },
+        danger: {
+          DEFAULT: "#FF0000",
+          secondary: "#FF7F7F",
+        },
       },
     },
   },

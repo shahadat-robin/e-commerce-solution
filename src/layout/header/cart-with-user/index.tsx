@@ -45,7 +45,7 @@ export default function CartWithUser() {
             <div className="divide-y">
               <div className="flex flex-col divide-y">
                 {cart.map((item, index) => (
-                  <CartProduct key={index} productId={item.productId} />
+                  <CartProduct key={index} item={item} />
                 ))}
               </div>
 

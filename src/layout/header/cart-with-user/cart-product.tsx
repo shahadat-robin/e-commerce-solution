@@ -1,24 +1,31 @@
-import { IProduct } from "@/sections/product-list/interface";
+import type { IProduct } from "@/sections/product-list/interface";
 import { useGetProductsQuery } from "@/store/api-slices/products-api";
-import { Typography } from "antd";
+import { useAppDispatch } from "@/store/hooks";
+import { quantityAdjust, removeFromCart, type ICartItem } from "@/store/slices/cart.slice";
+import { Tooltip, Typography } from "antd";
 import Image from "next/image";
-import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { TiMinus } from "react-icons/ti";
 import { twMerge } from "tailwind-merge";
 
 interface IProps {
-  productId: string | number;
+  item: ICartItem;
 }
 
-export default function CartProduct({ productId }: IProps) {
-  const [itemQuantity, setItemQuantity] = useState(1);
+export default function CartProduct({ item }: IProps) {
   const { data, error, isLoading } = useGetProductsQuery("products");
+
+  const dispatch = useAppDispatch();
 
   if (isLoading) return <>Loading...</>;
   if (!data || error) return <>Something wrong</>;
 
-  const product = data.products.find((product) => product.id === productId) as IProduct;
+  const handleAdjustQuantity = (quantity: number) =>
+    dispatch(quantityAdjust({ productId: item.productId, quantity }));
+
+  const handleRemoveFromCart = () => dispatch(removeFromCart(item.productId));
+
+  const product = data.products.find((product) => product.id === item.productId) as IProduct;
 
   return (
     <div className="flex gap-2 pt-2">
@@ -39,20 +46,31 @@ export default function CartProduct({ productId }: IProps) {
             <span
               className={twMerge(
                 "p-1 bg-white-secondary cursor-pointer",
-                itemQuantity <= 1 && "cursor-not-allowed"
+                item.quantity <= 1 && "pointer-events-none cursor-not-allowed"
               )}
-              onClick={() => itemQuantity > 1 && setItemQuantity(itemQuantity - 1)}
+              onClick={() => handleAdjustQuantity(item.quantity - 1)}
             >
               <TiMinus className="text-xs" />
             </span>
-            <span className="min-w-[1rem] text-center select-none">{itemQuantity}</span>
+            <span className="min-w-[1rem] text-center select-none">{item.quantity}</span>
             <span
               className="p-1 bg-white-secondary cursor-pointer"
-              onClick={() => setItemQuantity(itemQuantity + 1)}
+              onClick={() => handleAdjustQuantity(item.quantity + 1)}
             >
               <FaPlus className="text-xs" />
             </span>
           </div>
+
+          <Tooltip
+            title="Remove from cart"
+            classNames={{
+              body: "text-xs",
+            }}
+          >
+            <button className="text-xs text-danger" onClick={handleRemoveFromCart}>
+              Remove
+            </button>
+          </Tooltip>
 
           <p>${(product.price - (product.price * product.discountPercentage) / 100).toFixed(2)}</p>
         </div>
