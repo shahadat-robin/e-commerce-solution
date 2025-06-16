@@ -13,9 +13,10 @@ import type { IProduct } from "./interface";
 interface IProps {
   product: IProduct;
   handleAddToCart: Dispatch<number>;
+  price: number;
 }
 
-export default function ProductViewModal({ product, handleAddToCart }: IProps) {
+export default function ProductViewModal({ product, handleAddToCart, price }: IProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [toast, toastHolder] = message.useMessage();
@@ -97,9 +98,7 @@ export default function ProductViewModal({ product, handleAddToCart }: IProps) {
           </div>
 
           <div className="flex items-end gap-3">
-            <p className="text-3xl font-semibold">
-              ${(product.price - (product.price * product.discountPercentage) / 100).toFixed(2)}
-            </p>
+            <p className="text-3xl font-semibold">${price}</p>
             <p className="text-lg line-through">${product.price}</p>
           </div>
 

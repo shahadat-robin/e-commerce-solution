@@ -72,7 +72,7 @@ export default function CartProduct({ item }: IProps) {
             </button>
           </Tooltip>
 
-          <p>${(product.price - (product.price * product.discountPercentage) / 100).toFixed(2)}</p>
+          <p>${(item.price * item.quantity).toFixed(2)}</p>
         </div>
       </div>
     </div>

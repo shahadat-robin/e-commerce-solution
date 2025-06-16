@@ -14,6 +14,10 @@ export default function CartWithUser() {
   const [openCart, setOpenCart] = useState(false);
   const cart = useAppSelector((state) => state.cart);
 
+  const totalPrice = cart.reduce((total, item) => {
+    return total + item.quantity * item.price;
+  }, 0);
+
   return (
     <>
       <Dropdown.Button
@@ -51,13 +55,13 @@ export default function CartWithUser() {
 
               <div className="text-xl font-semibold flex items-center py-3 justify-between">
                 <p>Total:</p>
-                <p>$1000.00</p>
+                <p>${totalPrice.toFixed(2)}</p>
               </div>
             </div>
 
             <div>
               <Button type="primary" size="large" className="w-full">
-                Place order
+                Checkout
               </Button>
             </div>
           </>

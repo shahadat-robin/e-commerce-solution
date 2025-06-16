@@ -9,9 +9,10 @@ import ProductViewModal from "./product-view-modal";
 
 export default function ProductCard(product: IProduct) {
   const dispatch = useAppDispatch();
+  const price = +(product.price - (product.price * product.discountPercentage) / 100).toFixed(2);
 
   const handleAddToCart = (quantity: number) =>
-    dispatch(addToCart({ productId: product.id, quantity }));
+    dispatch(addToCart({ productId: product.id, quantity, price }));
 
   return (
     <div className="border-[0.5px] group flex-col flex">
@@ -31,7 +32,7 @@ export default function ProductCard(product: IProduct) {
             </span>
           </Tooltip>
 
-          <ProductViewModal product={product} handleAddToCart={handleAddToCart} />
+          <ProductViewModal product={product} handleAddToCart={handleAddToCart} price={price} />
 
           <Tooltip title={"Add to cart"}>
             <span
@@ -50,7 +51,7 @@ export default function ProductCard(product: IProduct) {
         </Typography.Title>
         <div>
           <Rate disabled defaultValue={product.rating} allowHalf className="text-sm" />
-          <p>${(product.price - (product.price * product.discountPercentage) / 100).toFixed(2)}</p>
+          <p>${price}</p>
         </div>
       </div>
     </div>

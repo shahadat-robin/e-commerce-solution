@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface ICartItem {
   productId: string | number;
+  price: number;
   quantity: number;
 }
 
@@ -35,7 +36,7 @@ const cartSlice = createSlice({
       }
     },
 
-    quantityAdjust: (state, { payload }: PayloadAction<ICartItem>) => {
+    quantityAdjust: (state, { payload }: PayloadAction<Omit<ICartItem, "price">>) => {
       state = state.map((item) => {
         if (item.productId === payload.productId) {
           return { ...item, quantity: payload.quantity };
