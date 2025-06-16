@@ -1,9 +1,14 @@
 import Image from "next/image";
 // import brandLogo from "../../../public/brand-logo.svg";
-import { Input } from "antd";
-import CartWithUser from "./cart-with-user";
+import { Input, Skeleton } from "antd";
+import dynamic from "next/dynamic";
 import InfoBar from "./info-bar";
 import NavBar from "./nav-bar";
+
+const CartWithUser = dynamic(() => import("./cart-with-user"), {
+  ssr: false,
+  loading: () => <Skeleton.Input active className="h-10" />,
+});
 
 export default function Header() {
   return (

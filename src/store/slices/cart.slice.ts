@@ -5,7 +5,21 @@ interface ICartItem {
   quantity: number;
 }
 
-const initialState: ICartItem[] = [];
+const getInitialCart = (): ICartItem[] => {
+  if (typeof window !== "undefined") {
+    const stored = localStorage.getItem("cart");
+    if (stored) {
+      try {
+        return JSON.parse(stored);
+      } catch {
+        return [];
+      }
+    }
+  }
+  return [];
+};
+
+const initialState: ICartItem[] = getInitialCart();
 
 const cartSlice = createSlice({
   name: "cart",
