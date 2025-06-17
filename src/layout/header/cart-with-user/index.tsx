@@ -1,5 +1,6 @@
 import { useAppSelector } from "@/store/hooks";
 import { Button, Drawer, Dropdown, Empty, MenuProps } from "antd";
+import Link from "next/link";
 import { useState } from "react";
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import CartProduct from "./cart-product";
@@ -59,11 +60,11 @@ export default function CartWithUser() {
               </div>
             </div>
 
-            <div>
+            <Link href="/checkout" onClick={() => setOpenCart(false)}>
               <Button type="primary" size="large" className="w-full">
                 Checkout
               </Button>
-            </div>
+            </Link>
           </>
         )}
       </Drawer>
