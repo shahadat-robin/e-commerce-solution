@@ -1,9 +1,11 @@
+import Cart from "@/components/cart";
 import { useAppSelector } from "@/store/hooks";
-import { Button, Drawer, Dropdown, Empty, MenuProps } from "antd";
+import { Button, Drawer, Dropdown, MenuProps } from "antd";
 import Link from "next/link";
-import { useState } from "react";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import { FiShoppingCart, FiUser } from "react-icons/fi";
-import CartProduct from "./cart-product";
 
 const items: MenuProps["items"] = [
   { label: "1st menu item", key: "1" },
@@ -15,9 +17,13 @@ export default function CartWithUser() {
   const [openCart, setOpenCart] = useState(false);
   const cart = useAppSelector((state) => state.cart);
 
-  const totalPrice = cart.reduce((total, item) => {
-    return total + item.quantity * item.price;
-  }, 0);
+  const router = useRouter();
+
+  const closeDrawer = () => setOpenCart(false);
+
+  useEffect(() => {
+    setOpenCart(false);
+  }, [router.pathname]);
 
   return (
     <>
@@ -37,35 +43,32 @@ export default function CartWithUser() {
       <Drawer
         title="Cart"
         closable={{ "aria-label": "Close Button" }}
-        onClose={() => setOpenCart(false)}
+        onClose={closeDrawer}
         open={openCart}
         classNames={{
           body: "flex flex-col justify-between gap-5",
         }}
       >
+        <Cart />
+
         {!cart.length ? (
-          <Empty description="Empty cart" />
+          <Link href="/" onClick={closeDrawer}>
+            <Button type="primary" size="large" className="w-full" icon={<FaArrowLeftLong />}>
+              Shopping
+            </Button>
+          </Link>
         ) : (
-          <>
-            <div className="divide-y">
-              <div className="flex flex-col divide-y">
-                {cart.map((item, index) => (
-                  <CartProduct key={index} item={item} />
-                ))}
-              </div>
-
-              <div className="text-xl font-semibold flex items-center py-3 justify-between">
-                <p>Total:</p>
-                <p>${totalPrice.toFixed(2)}</p>
-              </div>
-            </div>
-
-            <Link href="/checkout" onClick={() => setOpenCart(false)}>
-              <Button type="primary" size="large" className="w-full">
-                Checkout
-              </Button>
-            </Link>
-          </>
+          <Link href="/checkout" onClick={closeDrawer}>
+            <Button
+              type="primary"
+              size="large"
+              className="w-full"
+              icon={<FaArrowRightLong />}
+              iconPosition="end"
+            >
+              Checkout
+            </Button>
+          </Link>
         )}
       </Drawer>
     </>

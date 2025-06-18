@@ -1,18 +1,13 @@
+import BlockTitle from "@/components/block-title";
 import { useGetProductsQuery } from "@/store/api-slices/products-api";
-import { Skeleton, Typography } from "antd";
+import { Skeleton } from "antd";
 import ProductCard from "./product-card";
 
 export default function ProductListingSection() {
   return (
     <section className="py-10">
       <div className="container space-y-5">
-        <Typography.Title
-          level={3}
-          className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[3rem] after:bg-brand"
-        >
-          Collections
-        </Typography.Title>
-
+        <BlockTitle>Collections</BlockTitle>
         <ProductListing />
       </div>
     </section>
