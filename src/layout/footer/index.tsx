@@ -5,11 +5,14 @@ import { FaFacebook, FaInstagram, FaPinterest, FaYoutube } from "react-icons/fa"
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineMail } from "react-icons/md";
 import { quickLinks } from "./data";
+import NewsLetter from "./news-letter";
 
 export default function Footer() {
   return (
     <footer className="bg-dark text-white">
-      <div className="container grid grid-cols-4 py-10">
+      <NewsLetter />
+
+      <section className="container grid grid-cols-4 py-10">
         {quickLinks.map((item, index) => (
           <div className="space-y-5" key={index}>
             <Typography.Title
@@ -42,6 +45,7 @@ export default function Footer() {
                     <BiPhoneCall className="text-xl" />
                     <span>{item.contactInfo.phone}</span>
                   </li>
+
                   <li className="py-3 flex items-center gap-3">
                     <Button
                       shape="circle"
@@ -69,15 +73,15 @@ export default function Footer() {
             </ul>
           </div>
         ))}
-      </div>
+      </section>
 
-      <div className="py-5 bg-brand text-center">
+      <section className="py-5 bg-brand text-center">
         Developed By{" "}
         <Link href="https://shahadat-robin.vercel.app" target="_blank" className="font-semibold">
           Shahadat Robin
         </Link>{" "}
         © 2023
-      </div>
+      </section>
     </footer>
   );
 }

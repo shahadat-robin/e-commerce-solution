@@ -38,9 +38,3 @@ export const quickLinks = [
     },
   },
 ];
-
-export const contactInfo = {
-  location: "497/1 Modina road, Monipur, Mirpur-2, Dhaka-1216",
-  phone: "+8801772493214",
-  email: "connection.robin@gmail.com",
-};

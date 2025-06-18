@@ -3,7 +3,7 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 
 export default function NewsLetter() {
   return (
-    <section className="bg-brand text-white py-10">
+    <section className="bg-brand py-10">
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-5">
           <HiOutlineMailOpen className="text-5xl" />
