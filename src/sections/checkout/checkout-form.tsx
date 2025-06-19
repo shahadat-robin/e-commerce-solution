@@ -1,4 +1,5 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { Input } from "antd";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 interface ShippingInfo {
@@ -109,57 +110,14 @@ export default function CheckoutForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div className="grid grid-cols-1 gap-3">
-        <input
-          name="name"
-          placeholder="Full Name"
-          value={form.name}
-          onChange={handleChange}
-          className="p-2 border rounded"
-          required
-        />
-        <input
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          className="p-2 border rounded"
-          type="email"
-          required
-        />
-        <input
-          name="address"
-          placeholder="Address"
-          value={form.address}
-          onChange={handleChange}
-          className="p-2 border rounded"
-          required
-        />
-        <input
-          name="city"
-          placeholder="City"
-          value={form.city}
-          onChange={handleChange}
-          className="p-2 border rounded"
-          required
-        />
-        <input
-          name="postalCode"
-          placeholder="Postal Code"
-          value={form.postalCode}
-          onChange={handleChange}
-          className="p-2 border rounded"
-          required
-        />
-        <input
-          name="country"
-          placeholder="Country (e.g. US)"
-          value={form.country}
-          onChange={handleChange}
-          className="p-2 border rounded"
-          required
-        />
+      <Input placeholder="Full name" size="large" />
+      <Input placeholder="Email" size="large" />
+      <div className="flex items-center gap-5">
+        <Input placeholder="City" size="large" />
+        <Input placeholder="Postal code" size="large" />
       </div>
+
+      <Input.TextArea placeholder="Address" rows={3} />
 
       <CardElement
         className="p-2 border rounded"

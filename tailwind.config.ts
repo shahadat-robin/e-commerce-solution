@@ -2,9 +2,10 @@
 module.exports = {
   important: true,
   content: [
+    "./src/layout/**/*.{js,jsx,ts,tsx,mdx}",
     "./src/pages/**/*.{js,jsx,ts,tsx,mdx}",
     "./src/sections/**/*.{js,jsx,ts,tsx,mdx}",
-    "./src/layout/**/*.{js,jsx,ts,tsx,mdx}",
+    "./src/components/**/*.{js,jsx,ts,tsx,mdx}",
   ],
   theme: {
     container: {

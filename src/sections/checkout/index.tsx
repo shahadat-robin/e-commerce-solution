@@ -14,13 +14,13 @@ export default function Checkout() {
 
         <div className="grid grid-cols-5 gap-10">
           <div className="col-span-3">
-            <Cart shoppingLinkWhenEmpty />
-          </div>
-
-          <div className="col-span-2">
             <Elements stripe={stripePromise}>
               <CheckoutForm />
             </Elements>
+          </div>
+
+          <div className="col-span-2">
+            <Cart shoppingLinkWhenEmpty />
           </div>
         </div>
       </div>
