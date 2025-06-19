@@ -7,6 +7,7 @@ import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
 import { TiMinus } from "react-icons/ti";
 import { twMerge } from "tailwind-merge";
+import CartProductSkeleton from "../skeleton/cart-product";
 
 interface IProps {
   item: ICartItem;
@@ -14,10 +15,9 @@ interface IProps {
 
 export default function CartProduct({ item }: IProps) {
   const { data, error, isLoading } = useGetProductsQuery("products");
-
   const dispatch = useAppDispatch();
 
-  if (isLoading) return <>Loading...</>;
+  if (isLoading) return <CartProductSkeleton />;
   if (!data || error) return <>Something wrong</>;
 
   const handleAdjustQuantity = (quantity: number) =>

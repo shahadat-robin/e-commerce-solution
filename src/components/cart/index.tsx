@@ -1,33 +1,10 @@
 import { useAppSelector } from "@/store/hooks";
-import { Empty } from "antd";
-import Link from "next/link";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import getCartPrice from "@/utils/get-cart-price";
 import CartProduct from "./cart-product";
 
-interface IProps {
-  shoppingLinkWhenEmpty?: boolean;
-}
-
-export default function Cart({ shoppingLinkWhenEmpty = false }: IProps) {
+export default function Cart() {
   const cart = useAppSelector((state) => state.cart);
-
-  if (!cart.length) {
-    return (
-      <div className="text-center space-y-5">
-        <Empty description="Oops, your cart is empty. Add items to proceed to checkout." />
-        {shoppingLinkWhenEmpty && (
-          <Link href="/" className="inline-flex items-center gap-2 hover-ellipse">
-            <FaArrowLeftLong />
-            Shopping
-          </Link>
-        )}
-      </div>
-    );
-  }
-
-  const totalPrice = cart.reduce((total, item) => {
-    return total + item.quantity * item.price;
-  }, 0);
+  const totalPrice = getCartPrice(cart);
 
   return (
     <div className="divide-y">

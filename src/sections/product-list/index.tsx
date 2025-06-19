@@ -1,6 +1,6 @@
 import BlockTitle from "@/components/block-title";
+import ProductCardSkeleton from "@/components/skeleton/product-card";
 import { useGetProductsQuery } from "@/store/api-slices/products-api";
-import { Skeleton } from "antd";
 import ProductCard from "./product-card";
 
 export default function ProductListingSection() {
@@ -23,15 +23,7 @@ const ProductListing = () => {
     return (
       <div className={wrapperClassName}>
         {new Array(12).fill("").map((_, index) => (
-          <div key={index} className="border-[0.5px]">
-            <Skeleton.Image active className="w-full h-[200px]" />
-
-            <div className="p-3 flex flex-col items-center gap-2">
-              <Skeleton.Input active size="small" block />
-              <Skeleton.Input active size="small" className="h-5" />
-              <Skeleton.Input active size="small" className="h-5" />
-            </div>
-          </div>
+          <ProductCardSkeleton key={index} />
         ))}
       </div>
     );

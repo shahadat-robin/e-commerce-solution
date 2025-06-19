@@ -1,4 +1,5 @@
 import Cart from "@/components/cart";
+import EmptyCart from "@/components/empty-cart";
 import { useAppSelector } from "@/store/hooks";
 import { Button, Drawer, Dropdown, MenuProps } from "antd";
 import Link from "next/link";
@@ -49,7 +50,7 @@ export default function CartWithUser() {
           body: "flex flex-col justify-between gap-5",
         }}
       >
-        <Cart />
+        {!cart.length ? <EmptyCart shoppingLink={false} /> : <Cart />}
 
         {!cart.length ? (
           <Link href="/" onClick={closeDrawer}>
