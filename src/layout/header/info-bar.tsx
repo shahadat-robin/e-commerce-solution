@@ -5,10 +5,10 @@ import { MdOutlineMail } from "react-icons/md";
 export default function InfoBar() {
   return (
     <div className="bg-white-secondary">
-      <div className="container py-1.5 flex items-center justify-between">
+      <div className="container py-1.5 flex flex-col md:flex-row items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="flex items-center gap-1">
-            <BiPhoneCall /> Call us:
+            <BiPhoneCall /> <span className="hidden md:block">Call us:</span>
           </span>
           <Link href="tel:+8801772493214" className="hover-underline">
             +8801772493214

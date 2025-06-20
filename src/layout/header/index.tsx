@@ -16,7 +16,7 @@ export default function Header() {
     <>
       <InfoBar />
       <header className="sticky top-0 bg-white z-50">
-        <div className="container py-4 flex items-center justify-between">
+        <div className="container py-4 flex items-center justify-between gap-10">
           <Link href="/">
             <Image src={"/brand-logo.svg"} alt="brand-logo" width={200} height={100} priority />
           </Link>
@@ -24,7 +24,7 @@ export default function Header() {
           <Input.Search
             placeholder="Search"
             size="large"
-            className="max-w-[25rem]"
+            className="max-w-[25rem] hidden md:block"
             onSearch={(e) => console.log(e)}
           />
 

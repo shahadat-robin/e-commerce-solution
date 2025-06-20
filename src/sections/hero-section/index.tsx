@@ -6,7 +6,7 @@ import { carouselBanners, mediaBanners } from "./data";
 export default function HeroSection() {
   return (
     <section className="py-5">
-      <div className="container grid grid-cols-4 gap-5">
+      <div className="container grid grid-cols-4 gap-2 md:gap-5">
         {mediaBanners.map((banner, index) => (
           <div key={index} className={twMerge("", index === 1 && "row-start-2 col-start-1")}>
             <Image

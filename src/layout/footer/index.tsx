@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="bg-dark text-white">
       <NewsLetter />
 
-      <section className="container grid grid-cols-4 py-10">
+      <section className="container grid sm:grid-cols-2 lg:grid-cols-4 py-10 gap-10">
         {quickLinks.map((item, index) => (
           <div className="space-y-5" key={index}>
             <Typography.Title

@@ -17,7 +17,7 @@ export default function ProductListingSection() {
 const ProductListing = () => {
   const { data, error, isLoading } = useGetProductsQuery("products");
 
-  const wrapperClassName = "grid grid-cols-6 border-[0.5px]";
+  const wrapperClassName = "grid sm:grid-cols-2 md:grid-cols-3 border-[0.5px]";
 
   if (isLoading)
     return (

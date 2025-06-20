@@ -64,7 +64,7 @@ export default function NavBar() {
           </Space>
         </Dropdown>
 
-        <ul className="flex items-center gap-10 list-['⬩'] list-inside py-3 [&>li]:transition-colors [&>li]:duration-300">
+        <ul className="md:flex items-center gap-10 list-['⬩'] list-inside py-3 [&>li]:transition-colors [&>li]:duration-300 hidden">
           <li className="hover:text-brand">
             <Link href="#">Specials</Link>
           </li>

@@ -67,14 +67,14 @@ export default function Checkout() {
         {!cart.length ? (
           <EmptyCart />
         ) : (
-          <div className="grid grid-cols-5 gap-10">
-            <div className="col-span-3">
+          <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-5">
+            <div className="xl:col-span-3">
               <Elements stripe={stripePromise}>
                 <CheckoutForm showSuccessModal={showSuccessModal} />
               </Elements>
             </div>
 
-            <div className="col-span-2">
+            <div className="xl:col-span-2">
               <Cart />
             </div>
           </div>

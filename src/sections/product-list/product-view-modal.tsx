@@ -62,7 +62,7 @@ export default function ProductViewModal({ product, handleAddToCart, price }: IP
         width={800}
         footer={null}
         classNames={{
-          body: "grid grid-cols-2 gap-5",
+          body: "grid md:grid-cols-2 gap-5",
         }}
       >
         <Carousel
