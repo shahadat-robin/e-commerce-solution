@@ -55,12 +55,12 @@ npm run dev
 
 public/              # Static assets (images, logos)
 src/
-├── components/      # Reusable UI components (e.g. buttons, product cards)
+├── components/      # Reusable UI components (e.g. cart, skeleton etc.)
 ├── layout/          # Global layout wrappers (e.g. header, footer, layout components)
 ├── pages/           # Next.js pages (routes)
 ├── sections/        # Page-level UI sections (e.g. homepage sections)
 ├── store/           # Redux slices and store configuration
-├── utils/           # Utility functions (e.g. formatters, helpers)
+├── utils/           # Utility functions (e.g. helpers)
 ```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
