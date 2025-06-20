@@ -6,7 +6,7 @@ A full-featured eCommerce web application built with [Next.js](https://nextjs.or
 
 ### 🖼️ Homepage Preview
 
-## ![Homepage](./public/demo/home-page.png)
+## ![Homepage](./public/images/demo/home-page.png)
 
 - Clean UI built using Ant Design + Tailwind CSS
 - Type-safe code with TypeScript
