@@ -18,7 +18,7 @@ export default function Header() {
       <header className="sticky top-0 bg-white z-50">
         <div className="container py-4 flex items-center justify-between">
           <Link href="/">
-            <Image src={"/brand-logo.svg"} alt="" width={200} height={100} />
+            <Image src={"/brand-logo.svg"} alt="brand-logo" width={200} height={100} priority />
           </Link>
 
           <Input.Search
