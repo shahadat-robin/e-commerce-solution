@@ -1,6 +1,6 @@
 ## [🛍️ Shop Sizzle](https://shop-sizzle.vercel.app)
 
-A full-featured eCommerce web application built with [Next.js](https://nextjs.org/) 13 (Pages Router), TypeScript, Redux, Tailwind CSS, and Ant Design. This project showcases a complete frontend shopping experience, including product browsing, cart functionality, and Stripe integration for payments.
+A full-featured eCommerce web application built with [Next.js](https://nextjs.org/) 13 (Pages Router), TypeScript, [Redux](https://redux-toolkit.js.org/), Tailwind CSS, and [Ant Design](https://ant.design/). This project showcases a complete frontend shopping experience, including product browsing, cart functionality, and Stripe integration for payments.
 
 ## 📸 Demo
 
