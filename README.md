@@ -1,10 +1,13 @@
-## 🛍️ Shop Sizzle
+## [🛍️ Shop Sizzle](https://shop-sizzle.vercel.app)
 
 A full-featured eCommerce web application built with Next.js 13 (Pages Router), TypeScript, Redux, Tailwind CSS, and Ant Design. This project showcases a complete frontend shopping experience, including product browsing, cart functionality, and Stripe integration for payments.
 
 ## 📸 Demo
 
 -
+- Clean UI built using Ant Design + Tailwind CSS
+- Type-safe code with TypeScript
+- State management with Redux Toolkit
 
 ## 🚀 Features
 
@@ -15,6 +18,18 @@ A full-featured eCommerce web application built with Next.js 13 (Pages Router), 
 - Bento grid layout in hero section
 - Cart persistence via localStorage
 - Stripe checkout integration (test mode)
+
+## 🛠️ Tech Stack
+
+| Category       | Tools/Frameworks                   |
+| -------------- | ---------------------------------- |
+| **Framework**  | Next.js 13 (Pages Router)          |
+| **Language**   | TypeScript                         |
+| **Styling**    | Tailwind CSS, Ant Design (Antd)    |
+| **State**      | Redux Toolkit                      |
+| **Payments**   | Stripe (test mode)                 |
+| **Routing**    | File-based routing (Next.js pages) |
+| **Deployment** | Vercel / Netlify _(optional)_      |
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
