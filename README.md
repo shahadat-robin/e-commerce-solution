@@ -4,13 +4,17 @@ A full-featured eCommerce web application built with [Next.js](https://nextjs.or
 
 ## 📸 Demo
 
-### 🖼️ Homepage Preview
+#### 🖼️ Homepage Preview
 
 ## ![Homepage](./public/images/demo/home-page.png)
 
-- Clean UI built using Ant Design + Tailwind CSS
-- Type-safe code with TypeScript
-- State management with Redux Toolkit
+#### 🖼️ Product Preview
+
+## ![Homepage](./public/images/demo/product-view.png)
+
+#### 🖼️ Checkout Preview
+
+## ![Homepage](./public/images/demo/checkout-page.png)
 
 ## 🚀 Features
 
