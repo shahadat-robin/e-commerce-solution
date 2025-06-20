@@ -47,14 +47,10 @@ const cartSlice = createSlice({
       return state;
     },
 
-    removeFromCart: (state, { payload }: PayloadAction<string | number>) => {
-      state = state.filter((i) => i.productId !== payload);
-      return state;
-    },
+    removeFromCart: (state, { payload }: PayloadAction<string | number>) =>
+      state.filter((i) => i.productId !== payload),
 
-    clearCart: (state) => {
-      state = [];
-    },
+    clearCart: () => [],
   },
 });
 

@@ -5,7 +5,7 @@ function getCartPrice(cart: ICartItem[]) {
     return total + item.quantity * item.price;
   }, 0);
 
-  return totalPrice;
+  return +totalPrice.toFixed(2);
 }
 
 export default getCartPrice;

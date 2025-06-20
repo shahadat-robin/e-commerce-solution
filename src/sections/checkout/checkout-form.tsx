@@ -1,8 +1,9 @@
-import { useAppSelector } from "@/store/hooks";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import getCartPrice from "@/utils/get-cart-price";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { Input, InputNumber } from "antd";
+import { Button, Input, InputNumber } from "antd";
 import { type FormEvent, useState } from "react";
+import { BiLoader } from "react-icons/bi";
 
 interface ShippingInfo {
   name: string;
@@ -14,10 +15,15 @@ interface ShippingInfo {
   phone: string;
 }
 
-export default function CheckoutForm() {
+interface IProps {
+  showSuccessModal: () => void;
+}
+
+export default function CheckoutForm({ showSuccessModal }: IProps) {
   const stripe = useStripe();
   const elements = useElements();
   const cart = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
 
   const [isProcessing, setIsProcessing] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -82,6 +88,8 @@ export default function CheckoutForm() {
 
       if (paymentIntent?.status === "succeeded") {
         console.log("🎉 Payment succeeded!");
+        showSuccessModal();
+        // dispatch(clearCart());
         return;
       }
 
@@ -134,15 +142,23 @@ export default function CheckoutForm() {
         }}
       />
 
-      <button
-        type="submit"
+      <Button
+        htmlType="submit"
+        type="primary"
+        size="large"
         disabled={!stripe || isProcessing}
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        className="w-full"
       >
-        {isProcessing ? "Processing..." : `Pay $${getCartPrice(cart)}`}
-      </button>
+        {isProcessing ? (
+          <span className="flex items-center">
+            Processing... <BiLoader className="animate-spin" />
+          </span>
+        ) : (
+          `Pay $${getCartPrice(cart)}`
+        )}
+      </Button>
 
-      {errorMessage && <div className="text-sm text-red-500 mt-2">{errorMessage}</div>}
+      {errorMessage && <div className="text-sm text-danger ">{errorMessage}</div>}
     </form>
   );
 }

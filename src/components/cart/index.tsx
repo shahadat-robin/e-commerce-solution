@@ -16,7 +16,7 @@ export default function Cart() {
 
       <div className="text-lg font-semibold flex items-center py-3 gap-5 justify-end">
         <p>Total:</p>
-        <p>${totalPrice.toFixed(2)}</p>
+        <p>${totalPrice}</p>
       </div>
     </div>
   );
