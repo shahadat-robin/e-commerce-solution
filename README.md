@@ -35,10 +35,10 @@ A full-featured eCommerce web application built with Next.js 13 (Pages Router), 
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/your-repo-name
+git clone https://github.com/shahadat-robin/shop-sizzle.git
 
 # Navigate to the project directory
-cd your-repo-name
+cd shop-sizzle
 
 # Install dependencies
 npm install
@@ -47,6 +47,20 @@ npm install
 npm run dev
 
 # Visit the app at http://localhost:3000
+```
+
+## 📁 Folder Structure
+
+```bash
+
+public/              # Static assets (images, logos)
+src/
+├── components/      # Reusable UI components (e.g. buttons, product cards)
+├── layout/          # Global layout wrappers (e.g. header, footer, layout components)
+├── pages/           # Next.js pages (routes)
+├── sections/        # Page-level UI sections (e.g. homepage sections)
+├── store/           # Redux slices and store configuration
+├── utils/           # Utility functions (e.g. formatters, helpers)
 ```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
