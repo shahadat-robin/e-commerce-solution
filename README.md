@@ -29,21 +29,31 @@ A full-featured eCommerce web application built with Next.js 13 (Pages Router), 
 | **State**      | Redux Toolkit                      |
 | **Payments**   | Stripe (test mode)                 |
 | **Routing**    | File-based routing (Next.js pages) |
-| **Deployment** | Vercel / Netlify _(optional)_      |
+| **Deployment** | Vercel                             |
+
+## 📦 Installation & Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/your-repo-name
+
+# Navigate to the project directory
+cd your-repo-name
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+
+# Visit the app at http://localhost:3000
+```
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
 First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
