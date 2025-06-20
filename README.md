@@ -1,3 +1,19 @@
+## 🛍️ E-Commerce Website
+
+A full-featured eCommerce web application built with Next.js 13 (Pages Router), TypeScript, Redux, Tailwind CSS, and Ant Design. This project showcases a complete frontend shopping experience, including product browsing, cart functionality, and Stripe integration for payments.
+
+## 📸 Demo
+
+## 🚀 Features
+
+- Bento grid layout in hero section
+- Stripe checkout integration (test mode)
+- State management with Redux Toolkit
+- Fully responsive design (mobile-first)
+- Clean UI built using Ant Design + Tailwind CSS
+- Cart persistence via localStorage
+- Type-safe code with TypeScript
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
