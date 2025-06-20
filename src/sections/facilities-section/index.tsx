@@ -8,7 +8,7 @@ export default function FacilitiesSection() {
   return (
     <section className="py-10">
       <div className="container">
-        <div className="border grid sm:grid-cols-2 divide-y divide-x">
+        <div className="border grid sm:grid-cols-2 lg:grid-cols-4 divide-y divide-x">
           <div className="flex items-center gap-5 p-5">
             <GoGift className="text-4xl" />
             <div>

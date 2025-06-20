@@ -69,13 +69,13 @@ export default function NavBar() {
             <Link href="#">Specials</Link>
           </li>
           <li className="hover:text-brand">
-            <Link href="#">Specials</Link>
+            <Link href="#">Flash sale</Link>
           </li>
           <li className="hover:text-brand">
-            <Link href="#">Specials</Link>
+            <Link href="#">Super sale</Link>
           </li>
           <li className="hover:text-brand">
-            <Link href="#">Specials</Link>
+            <Link href="#">Big sale</Link>
           </li>
         </ul>
       </div>
