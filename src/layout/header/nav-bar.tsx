@@ -58,7 +58,7 @@ export default function NavBar() {
           trigger={["click"]}
           className="bg-brand cursor-pointer py-3 px-10 group"
         >
-          <Space className="uppercase tracking-widest">
+          <Space className="uppercase tracking-widest flex items-center gap-5">
             Categories
             <IoMdArrowDropdown className="text-xl group-[.ant-dropdown-open]:rotate-180 transition-all duration-300" />
           </Space>

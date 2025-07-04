@@ -1,6 +1,7 @@
 import { store } from "@/store";
 import theme from "@/utils/theme";
 import { ConfigProvider } from "antd";
+import "antd/dist/reset.css";
 import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import AppLayout from "../layout";
